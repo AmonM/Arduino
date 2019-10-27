@@ -10,7 +10,7 @@ void setup() {
 void loop() {
   int podatk = analogRead(0);
 
-  if(podatk >= 650){
+  if(podatk >= 650){ //650 is my limit when to trigger 
      Serial.println(podatk);
      if(luc){
         digitalWrite(3,LOW);
@@ -19,6 +19,6 @@ void loop() {
         digitalWrite(3,HIGH);
         luc = true;
      }
-    delay(100);     
+    delay(100);	//give it some time to trigger only once per clap
   }
 }
